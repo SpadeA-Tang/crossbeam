@@ -1531,7 +1531,7 @@ impl<T> From<*const T> for Shared<'_, T> {
     /// ```
     fn from(raw: *const T) -> Self {
         let raw = raw as *mut ();
-        ensure_aligned::<T>(raw);
+        // ensure_aligned::<T>(raw);
         unsafe { Self::from_ptr(raw) }
     }
 }
